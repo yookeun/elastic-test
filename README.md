@@ -56,18 +56,6 @@ Bootstrap.memory_lock: true
 network.host: 0.0.0.0 (외부접속허용)
 ```
 
-
-### /etc/security/limits.conf  
-```
-* soft nofile 65536
-* hard nofile 65536
-* soft nproc 65536
-* hard nproc 65536
-
-elasticsearch soft memlock unlimited
-elasticsearch hard memlock unlimited
-
-```
 ### Bootstrap 관련 설정
 
 #### /etc/security/limits.conf 
