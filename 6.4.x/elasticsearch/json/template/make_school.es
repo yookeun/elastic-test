@@ -103,4 +103,16 @@ PUT /_template/school_teacher_template
 }
 
 
-GET /school_student*/_search
+## alias 생성
+POST /_aliases
+{
+    "actions": [
+        { "add" : { "index" : "school_student*", "alias" : "school_student" } },
+        { "add" : { "index" : "school_teacher*", "alias" : "school_teacher" } }
+    ]
+}
+
+
+GET /school_teacher/_search
+
+GET /school_student/_search
