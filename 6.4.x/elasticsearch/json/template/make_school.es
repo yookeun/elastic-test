@@ -1,4 +1,6 @@
 
+
+###
 GET /_all/_search
 
 
@@ -30,6 +32,15 @@ PUT  /_template/school_common_template
                 },
                 "age": {
                     "type": "integer"
+                },
+                "address": {
+                    "type": "text",
+                    "analyzer": "nori",
+                    "fields": {
+                        "raw": {
+                            "type": "keyword"
+                        }
+                    }
                 },
                 "regDate": {
                     "type": "date",
@@ -90,3 +101,6 @@ PUT /_template/school_teacher_template
         }
     }
 }
+
+
+GET /school_student*/_search
