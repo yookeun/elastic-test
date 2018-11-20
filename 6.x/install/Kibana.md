@@ -1,4 +1,4 @@
-# Kibana 6.4.x 설치가이드 
+# Kibana 6.x 설치가이드 
 
 ## 설치환경 
 - CentOS 7 

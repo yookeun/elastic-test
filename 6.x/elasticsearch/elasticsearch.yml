@@ -1,0 +1,18 @@
+cluster.name: ykkim-cluster
+node.name: ykkim-node
+path.data: /var/lib/elastchsearch
+path.logs: /var/log/elasticsearch
+
+boostrap.memory_lock: true
+network.host: 0.0.0.0
+
+xpack.security.enabled: true
+xpack.ssl.key: /etc/elasticsearch/cert/ykkim-vm/ykkim-vm.key
+xpack.ssl.certificate: /etc/elasticsearch/cert/ykkim-vm/ykkim-vm.crt
+xpack.ssl.certificate_authorities: [ "/etc/elasticsearch/cert/ca/ca.crt" ]
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.http.ssl.enabled: true
+xpack.ssl.verification_mode: certificate
+
+xpack.monitoring.collection.enabled: true

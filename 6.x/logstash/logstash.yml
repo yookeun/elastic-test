@@ -1,0 +1,24 @@
+node.name: ykkim-logstash
+config.reload.automatic: true
+config.reload.interval: 3s
+
+xpack.monitoring.enabled: true
+xpack.monitoring.elasticsearch.username: logstash_system
+xpack.monitoring.elasticsearch.password: logstash1234
+xpack.monitoring.elasticsearch.url: ["https://192.168.59.5:9200"]
+xpack.monitoring.elasticsearch.ssl.ca: "/etc/logstash/cert/ca/ca.crt"
+xpack.monitoring.elasticsearch.ssl.verification_mode: certificate
+xpack.monitoring.elasticsearch.sniffing: false
+xpack.monitoring.collection.interval: 10s
+xpack.monitoring.collection.pipeline.details.enabled: true
+
+
+xpack.management.enabled: true
+xpack.management.pipeline.id: ["main","metric"]
+xpack.management.elasticsearch.username: elastic
+xpack.management.elasticsearch.password: elastic1234
+xpack.management.elasticsearch.url: ["https://192.168.59.5:9200"]
+xpack.management.elasticsearch.ssl.ca: "/etc/logstash/cert/ca/ca.crt"
+xpack.management.elasticsearch.ssl.verification_mode: certificate
+xpack.management.elasticsearch.sniffing: false
+xpack.management.logstash.poll_interval: 5s

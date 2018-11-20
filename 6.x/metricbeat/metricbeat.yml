@@ -1,0 +1,16 @@
+metricbeat.config.modules:
+  reload.enabled: true
+  reload.period: 10s
+
+
+
+## 키바나 설정 
+setup.kibana:
+  host: "https://192.168.59.5"
+
+
+## 로그스테시 설정 
+output.logstash:
+
+
+name: ykkim-metricbeat

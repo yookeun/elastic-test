@@ -1,4 +1,4 @@
-# Logstash 6.4.x 설치가이드 
+# Logstash 6.x 설치가이드 
 
 ## 설치환경 
 - CentOS 7 
