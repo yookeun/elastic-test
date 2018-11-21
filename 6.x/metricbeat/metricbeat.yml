@@ -1,16 +1,65 @@
 metricbeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
   reload.enabled: true
   reload.period: 10s
 
+#==================== Elasticsearch template setting ==========================
 
-
-## 키바나 설정 
-setup.kibana:
-  host: "https://192.168.59.5"
-
-
-## 로그스테시 설정 
-output.logstash:
-
-
+setup.template.name: "metricbeat"
+setup.template.pattern: "metricbeat-*"
+setup.template.overwite: false
+setup.template.settings:
+  index.number_of_shards: 5
+  index.number_of_replicas: 0
+  index.codec: best_compression
+#================================ General =====================================
 name: ykkim-metricbeat
+#============================== Dashboards =====================================
+setup.dashboards.enabled: true
+#============================== Kibana =====================================
+setup.kibana:
+  host: "https://192.168.59.5:5601"
+  username: "elastic"
+  password: "elastic1234"
+  ssl.certificate_authorities: ["/etc/metricbeat/cert/ca/ca.crt"]  
+
+#================================ Outputs =====================================
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  hosts: ["https://192.168.59.5:9200"]  
+  protocol: "https"
+  username: "elastic"
+  password: "elastic1234"
+  ssl.certificate_authorities: ["/etc/metricbeat/cert/ca/ca.crt"]
+
+#----------------------------- Logstash output --------------------------------
+#output.logstash:
+  # The Logstash hosts
+  #hosts: ["192.168.159.5:5044"]
+
+  # Optional SSL. By default is off.
+  # List of root certificates for HTTPS server verifications
+  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+
+  # Certificate for SSL client authentication
+  #ssl.certificate: "/etc/pki/client/cert.pem"
+
+  # Client Certificate Key
+  #ssl.key: "/etc/pki/client/cert.key"
+
+#================================ Procesors =====================================
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
+
+#================================ Logging =====================================
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/metricbeat
+  name: metricbeat
+  keepfiles: 7
+  permissions: 0644
+
+xpack.monitoring.enabled: true
+xpack.monitoring.elasticsearch:

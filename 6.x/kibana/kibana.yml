@@ -1,0 +1,15 @@
+# Kibana is served by a back end server. This setting specifies the port to use.
+server.port: 5601
+server.host: "0.0.0.0"
+server.name: "ykkim-kibana"
+elasticsearch.url: "https://192.168.59.5:9200"
+server.ssl.enabled: true
+server.ssl.certificate: /etc/kibana/cert/ykkim-vm/ykkim-vm.crt
+server.ssl.key: /etc/kibana/cert/ykkim-vm/ykkim-vm.key
+logging.dest: /var/log/kibana/kibana.log
+xpack.security.enabled: true
+elasticsearch.username: "elastic"
+elasticsearch.password: "elastic1234"
+elasticsearch.ssl.certificateAuthorities: /etc/kibana/cert/ca/ca.crt
+
+
