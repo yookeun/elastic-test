@@ -1,91 +1,21 @@
 {
-    "took": 3,
-    "timed_out": false,
-    "_shards": {
-        "total": 5,
-        "successful": 5,
-        "skipped": 0,
-        "failed": 0
-    },
-    "hits": {
-        "total": 3,
-        "max_score": 1,
-        "hits": [
+    "error": {
+        "root_cause": [
             {
-                "_index": "school_teacher-2018-10-22",
-                "_type": "_doc",
-                "_id": "c0RimmYB2zwVh4ZPpC0k",
-                "_score": 1,
-                "_source": {
-                    "host": "ykkim-ubuntu",
-                    "regDate": "2018-10-03 10:00:00",
-                    "tags": [
-                        "teacher"
-                    ],
-                    "school": "schoolC",
-                    "@timestamp": "2018-10-22T06:07:27.661Z",
-                    "gender": "male",
-                    "path": "/home/ykkim/workspace/elastic-test/data/json/teachers.log",
-                    "@version": "1",
-                    "address": "경기도 고양시 덕양구",
-                    "age": 42,
-                    "profile": {
-                        "career": 14,
-                        "subject": "english"
-                    },
-                    "name": "kim3"
-                }
-            },
-            {
-                "_index": "school_teacher-2018-10-22",
-                "_type": "_doc",
-                "_id": "cERimmYB2zwVh4ZPoC2i",
-                "_score": 1,
-                "_source": {
-                    "host": "ykkim-ubuntu",
-                    "regDate": "2018-10-02 10:00:00",
-                    "tags": [
-                        "teacher"
-                    ],
-                    "school": "schoolB",
-                    "@timestamp": "2018-10-22T06:07:26.163Z",
-                    "gender": "female",
-                    "path": "/home/ykkim/workspace/elastic-test/data/json/teachers.log",
-                    "@version": "1",
-                    "address": "부산 광역시 해운동",
-                    "age": 41,
-                    "profile": {
-                        "career": 13,
-                        "subject": "math"
-                    },
-                    "name": "kim2"
-                }
-            },
-            {
-                "_index": "school_teacher-2018-10-22",
-                "_type": "_doc",
-                "_id": "bkRimmYB2zwVh4ZPny2p",
-                "_score": 1,
-                "_source": {
-                    "host": "ykkim-ubuntu",
-                    "regDate": "2018-10-01 10:00:00",
-                    "tags": [
-                        "teacher"
-                    ],
-                    "school": "schoolA",
-                    "@timestamp": "2018-10-22T06:07:26.162Z",
-                    "gender": "male",
-                    "path": "/home/ykkim/workspace/elastic-test/data/json/teachers.log",
-                    "@version": "1",
-                    "address": "서울 특별시 종로구 안국동",
-                    "age": 40,
-                    "profile": {
-                        "career": 12,
-                        "subject": "english"
-                    },
-                    "name": "kim1"
-                }
+                "type": "index_not_found_exception",
+                "reason": "no such index",
+                "resource.type": "index_or_alias",
+                "resource.id": "stocks",
+                "index_uuid": "_na_",
+                "index": "stocks"
             }
-        ]
-    }
+        ],
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "stocks",
+        "index_uuid": "_na_",
+        "index": "stocks"
+    },
+    "status": 404
 }

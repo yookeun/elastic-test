@@ -1,0 +1,5 @@
+curl -H "Content-Type: application/json" -XPUT "http://localhost:9200/_bulk?pretty" --data-binary @movies.json
+
+
+###
+curl -H "Content-Type: application/json" -XGET "http://localhost:9200"
