@@ -1,0 +1,10 @@
+
+
+###
+curl -H "Content-Type: application/x-ndjson" -XPOST "http://localhost:9200/orders/_doc/_bulk?pretty" --data-binary @orders-bulk.json
+
+###
+curl -H "Content-Type: application/x-ndjson" -XPOST "http://localhost:9200/products/_doc/_bulk?pretty" --data-binary @products-bulk.json
+
+###
+curl -H "Content-Type: application/x-ndjson" -XPOST "http://localhost:9200/recipes/_doc/_bulk?pretty" --data-binary @recipes-bulk.json
